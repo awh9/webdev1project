@@ -24,3 +24,8 @@ You will need to start the local development server with the following command:
 * Run the webserver "npm run start" will run "node index.js" 
 
 Once the server starts then open your web browser to localhost:3000 to view the web page.
+
+
+As a web developer,
+I want to create a personal portfolio website that showcases my skills, projects, and experience in an impressive and professional manner,
+So that potential clients and employers can easily assess my capabilities and hire me for relevant opportunities.
