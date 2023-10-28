@@ -229,6 +229,31 @@ body {
     /* Icon size */
 }
 
+footer {
+    text-align: center;
+    /* Center align the text */
+    padding: var(--section-spacing);
+    /* Add padding around the footer content */
+    border-top: var(--section-separator);
+    /* Add a line above the footer */
+    font-family: var(--font-secondary);
+    font-size: var(--h4-font-size);
+    /* Use secondary font for navigation links */
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #dddddd;
+      
+      li {
+        float: left;
+      }
+      
+      li a {
+        display: block;
+        padding: 8px;
+      }
+}
 /* Responsive design: apply different styles when the viewport width is 768px or less */
 
 @media (max-width: 768px) {
