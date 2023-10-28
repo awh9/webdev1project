@@ -72,6 +72,26 @@ p {
     /* Include padding and border in element's total width and height */
 }
 
+nav {
+    font-family: var(--font-secondary);
+    font-size: var(--h4-font-size);
+    /* Use secondary font for navigation links */
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #dddddd;
+      
+      li {
+        float: left;
+      }
+      
+      li a {
+        display: block;
+        padding: 8px;
+      }
+}
+
 body {
     background: url('../images/ocean.webp'); 
     /* Background image */
