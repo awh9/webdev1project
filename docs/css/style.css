@@ -85,8 +85,7 @@ nav {
       }
 }
 
-body {
-    background: url('/images/ocean.webp'); 
+body { 
     /* Background image */
     background-size: cover;
     /* Scale the background image to be as large as possible */
@@ -105,8 +104,13 @@ body {
     display: grid;
     grid-template-columns: 61.8% 9.02% 5.58% 23.6%;
     grid-template-rows: 61.8% 9.02% 5.58% 23.6%;
-    grid-template-areas: "A B B B" "A C D B" "A C D B" "A D D C"
-  }
+    grid-template-areas: 
+        "A B B B"
+        "A . . C"
+        "A . . C"
+        "A D D C";
+}
+
   .item {
     display: flex;
     justify-content: center;
@@ -126,34 +130,16 @@ body {
   }
   .item-projects {
     grid-area: B;
-    background-color: #c1cefe;
+    background-color: #fdffef;
   }
   .item-Articles {
     grid-area: C;
-    background-color: #758ecd;
+    background-color: #fdffef;
   }
   .item-professional-links {
     grid-area: D;
-    background-color: #7189ff;
+    background-color: #fdffef;
   }
-
-
-.sidebar {
-    flex: 1;
-    /* Take up 1 fraction of the available space */
-    display: flex;
-    /* Apply Flexbox layout */
-    flex-direction: column;
-    /* Stack the children vertically */
-    justify-content: space-between;
-    /* Distribute space evenly between the children */
-    padding: var(--sidebar-spacing);
-    /* Add padding around the sidebar content */
-    background-color: var(--color-secondary);
-    /* Background color of the sidebar */
-    color: rgb(0, 0, 0);
-    /* Text color in the sidebar */
-}
 
 .links {
     display: flex;
@@ -180,30 +166,6 @@ body {
     /* Change text color on hover */
     transform: scale(1.1);
     /* Enlarge the link on hover */
-}
-
-.main-content {
-    flex: 3;
-    /* Take up 3 fractions of the available space */
-    padding: var(--section-spacing);
-    /* Add padding around the main content */
-}
-
-.main-content section,
-.main-content header {
-    margin-bottom: var(--section-spacing);
-    /* Add space below each section */
-    padding-bottom: var(--section-spacing);
-    /* Add padding at the bottom of each section */
-    border-bottom: var(--section-separator);
-    /* Add a line below each section */
-}
-
-.main-content section:last-child {
-    margin-bottom: 0;
-    /* Remove the bottom margin from the last section */
-    border-bottom: none;
-    /* Remove the line from the last section */
 }
 
 .menu {
@@ -245,16 +207,25 @@ footer {
         padding: 0;
         overflow: hidden;
         background-color: rgb(194, 218, 213);
-      
-      li {
-        float: left;
-      }
-      
-      li a {
-        display: block;
-        padding: 8px;
-      }
+        text-decoration: none; /* Remove underline from links */
+        color: var(--color-primary); /* Set link text color */
 }
+
+.footer-link {
+    list-style: none; /* Remove list bullets */
+    margin: 0; /* Remove default list margins */
+    padding: 0; /* Remove default list padding */
+    display: center;
+  }
+
+  .footer-link ul a {
+    text-decoration: none; /* Remove underline from links */
+    color: var(--color-primary); /* Set link text color */
+  }
+  
+  .footer-link ul a:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
 /* Responsive design: apply different styles when the viewport width is 768px or less */
 
 @media (max-width: 768px) {
