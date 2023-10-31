@@ -1,16 +1,5 @@
 const { test, expect } = require('@playwright/test');
 
-test('check that "express works" text is present', async ({ page }) => {
-  await page.goto('/');
-  
-  // Using the expect method with a page locator
-  // This will check if the text "express works" is present anywhere on the page
-  // Using a locator to get the text content of the h1 element
-  const heading = page.locator('h1');
-  await expect(heading).toHaveText('express works');
-
-});
-
 test('check that UTF-8 meta tag is present', async ({ page }) => {
   //Arrange: Go to the site homepage
   await page.goto('/');
@@ -18,6 +7,64 @@ test('check that UTF-8 meta tag is present', async ({ page }) => {
   //Act: Get the content attribute of the meta charset tag
   const metaCharset = await page.$eval('meta[charset]', (meta) => meta.getAttribute('charset'));
 
-  //Assert: Check if the charset is set to UTF-8
+  //Assert: Check if the charset is set to utf-8
   await expect(metaCharset).toBe('utf-8');
 });
+
+test('check that the viewport meta tag is present', async ({ page }) => {
+  //Arrange: Go to the site homepage
+  await page.goto('/');
+  const metaViewport = await page.$eval('meta[name="viewport"]', (meta) => meta.getAttribute('content'));
+  await expect(metaViewport).toBe('width=device-width, initial-scale=1.0');
+});
+
+test('check that the title is "Personal Portfolio"', async ({ page }) => {
+  // Using the page title to check that the title is "Andre Henry"
+
+  await page.goto('/');
+await page.waitForTimeout(2000);
+const actualTitle = await page.title();
+console.log('Actual Title:', actualTitle);
+await expect(actualTitle).toBe('Personal Portfolio');
+});
+
+test('check that "Andre Henry" h1 is present', async ({ page }) => {
+  // Using a locator to get the h1 element with the text "Andre Henry"
+
+  await page.goto('/');
+  const heading = page.locator('h1:has-text("Andre Henry")');
+  await expect(heading).toBeVisible();
+});
+
+test('check that the "Projects" section is present', async ({ page }) => {
+  // Using a locator to get the h1 element with the text "Projects"
+
+  await page.goto('/');
+  const heading = page.locator('h1:has-text("Projects")');
+  await expect(heading).toBeVisible();
+});
+
+test('check that the "Articles" section is present', async ({ page }) => {
+  // Using a locator to get the h1 element with the text "About"
+
+  await page.goto('/');
+  const heading = page.locator('h1:has-text("Articles")');
+  await expect(heading).toBeVisible();
+});
+
+test('check that the "Professional Links" section is present', async ({ page }) => {
+  // Using a locator to get the h1 element with the text "Professional Links"
+
+  await page.goto('/');
+  const heading = page.locator('h1:has-text("Professional Links")');
+  await expect(heading).toBeVisible();
+});
+
+test ('check that the links in the footer are present', async ({ page }) => {
+  // Using a locator to check the links in the footer
+
+  await page.goto('/');
+  const footer = page.locator('footer:has-text("Home")');
+  await expect(footer).toBeVisible();
+});
+
