@@ -2,17 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device=width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name = "description" content = "This is my personal portfolio">
     <meta name = "keywords" content = "Resume, Portfolio, Discover">
-    <title>Website</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Preloads font awesome stylesheet for icons, this helps speed up loading as the stylesheet is loaded in the background -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript> <!-- Provides a fallback in case JavaScript is disabled -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    </noscript>
+
+    <!-- Preloads the Google fonts for the webpage, helps with performance -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Work+Sans:wght@400;500&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript> <!-- Provides a fallback in case JavaScript is disabled -->
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Work+Sans:wght@400;500&display=swap">
+    </noscript>
+
 </head>
 
-<header>
     <nav>
-        <div class = "logo">Portfolio</div>
 
     <div class = "menu">
         <div class = "wrapper">
@@ -20,8 +35,6 @@
             <ul>
                 <a href = "index.html">Home</a>
             </ul>
-        </div>
-        <div class ="menu-item">
             <ul>
                 <a href = "resume.html">Resume</a>
             </ul>
@@ -31,12 +44,10 @@
     </div>
     </div>
 </nav>
-</header>
 
 <body>
-
-    <div class= "hero">
-        <div class = "wrapper">
+    <div class = "container">
+    <div class= "item-hero">
             <header>
             <div class = "hero-h1">
                 <h1>Andre Henry</h1>
@@ -44,7 +55,7 @@
             <div class = "hero-sub-h2">
                 <h2>Cyber Security Analyst & Web Developer</h2>
             <div class = "hero-sub-text"><p>Hi there! I am Andre a Cyber Security Analyst and Web Developer. I am a Junior majoring in Information Technology, with a Network and Information Security Specialization, and minoring in Web & App Development. What makes me unique is my ability to bridge the gap between Cybersecurity and Web Development allows me to create innovative solutions. I bring a unique perspective to every project by leveraging my analytical thinking and creativity to develop secure & user-friendly applications. Welcome to my personal portfolio!  </p></div>
-            <div class = "hero-links">
+            <div class = "links">
                 <button onclick= a href ="#">CONTACT ME</button>
                 </div>
             </div>
@@ -53,10 +64,8 @@
             </div>
             </header>
         </div>
-    </div>
-
-    <div class= "projects">
-        <div class = "wrapper">
+    
+    <div class= "item-projects">
             <header>
             <div cLass = "project-h1"><h1>Projects</h1></div>
             <div class = "project-h2">
@@ -66,7 +75,7 @@
                         <p>Created a simple e-commerce site for users. Administrators or store owners could
                             manage inventory and users could manage their carts and place orders. </p>
                     </div>
-                    <div class = "project-links">
+                    <div class = "links">
                         <a href= "http://youtube.com/IT202Project"> <i class="fab fa-youtube"></i> </a>
                         <!-- <a href= "http://github.com/awh9/IT202"> <i class="fab fa-github"></i> </a> </p> -->
                     </div>
@@ -78,7 +87,7 @@
                         sockets. New joiners could not see the previous chat history and users could break out
                         into separate rooms. </p>
                     </div>
-                    <div class = "project-links">
+                    <div class = "links">
                         <a href= "http://www.youtube.com/IT114"> <i class="fab fa-youtube"></i> </a>
                         <!-- <a href= "http://github.com/awh9/IT-114"> <i class="fab fa-github"></i> </a> </p> -->
                     </div>
@@ -88,15 +97,13 @@
                     <div class = "project-subtext">
                     <p>Created using C# programming in the Unity content creation engine.
                     </p>
-                    <div class = "project-links">
-                        <a href= "https://ahenry777.itch.io/it-201-sprint-4"> Game Link </a>
+                    <div class = "links">
+                        <a href= "https://ahenry777.itch.io/it-201-sprint-4"> <i class="fab fa-phone"></i> </a>
                     </div>
             </header>
         </div>
-    </div>
 
-    <div class= "Articles">
-        <div class = "wrapper">
+    <div class= "item-Articles">
             <header>
                 <div class ="articles-content1"><h1>Articles</h1></div>
                 <div class = "articles-image">
@@ -107,13 +114,10 @@
             </div>
             <div class = "articles-content3">
             </div>
-            </div>
             </header>
         </div>
-    </div>
 
-    <div class= "professional-links">
-        <div class = "wrapper">
+    <div class= "item-professional-links">
             <header>
             <div class = "professional-links-text">
                 <h1>Professional Links</h1>
@@ -129,16 +133,16 @@
             </div>
             </header>
         </div>
-    </div>
+</div>
 </body>
 
 <footer> 
     <div class = "footer-link">
     <ul>
-        <a href = "#">Home</a>
+        <a href = "index.html">Home</a>
     </ul>
     <ul>
-        <a href = "#">Resume</a>
+        <a href = "resume.html">Resume</a>
     </ul> 
     </div>
 
