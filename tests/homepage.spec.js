@@ -11,6 +11,13 @@ test('check that UTF-8 meta tag is present', async ({ page }) => {
   await expect(metaCharset).toBe('utf-8');
 });
 
+test('check that the viewport meta tag is present', async ({ page }) => {
+  //Arrange: Go to the site homepage
+  await page.goto('/');
+  const metaViewport = await page.$eval('meta[name="viewport"]', (meta) => meta.getAttribute('content'));
+  await expect(metaViewport).toBe('width=device-width, initial-scale=1.0');
+});
+
 test('check that "Andre Henry" h1 is present', async ({ page }) => {
   // Using a locator to get the h1 element with the text "Andre Henry"
 
