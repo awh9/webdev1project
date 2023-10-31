@@ -35,4 +35,11 @@ test('check that the "Articles" section is present', async ({ page }) => {
   await expect(heading).toBeVisible();
 });
 
+test('check that the "Professional Links" section is present', async ({ page }) => {
+  // Using a locator to get the h1 element with the text "Professional Links"
+
+  await page.goto('/');
+  const heading = page.locator('h1:has-text("Professional Links")');
+  await expect(heading).toBeVisible();
+});
 
