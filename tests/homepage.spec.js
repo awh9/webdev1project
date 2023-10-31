@@ -34,3 +34,5 @@ test('check that the "Articles" section is present', async ({ page }) => {
   const heading = page.locator('h1:has-text("Articles")');
   await expect(heading).toBeVisible();
 });
+
+
