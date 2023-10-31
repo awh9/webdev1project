@@ -20,10 +20,17 @@ test('check that "Andre Henry" h1 is present', async ({ page }) => {
 });
 
 test('check that the "Projects" section is present', async ({ page }) => {
-  // Using a locator to get the section element with the text "Projects"
+  // Using a locator to get the h1 element with the text "Projects"
 
   await page.goto('/');
   const heading = page.locator('h1:has-text("Projects")');
   await expect(heading).toBeVisible();
-}
-);
+});
+
+test('check that the "Articles" section is present', async ({ page }) => {
+  // Using a locator to get the h1 element with the text "About"
+
+  await page.goto('/');
+  const heading = page.locator('h1:has-text("Articles")');
+  await expect(heading).toBeVisible();
+});
