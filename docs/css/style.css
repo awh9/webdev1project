@@ -1,0 +1,336 @@
+:root {
+    /* Colors */
+    --color-primary: rgb(0, 0, 0);  /* Dark Blue for main text */
+    --color-secondary: teal;  /* Teal for sidebar */
+    --color-accent: teal;  /* Teal for links hover and section separators */
+    --hover-color: #88b7d8;
+
+
+
+    /* Spacing */
+    --base-spacing: 1.5rem;
+    /* Main spacing for elements */
+    --section-spacing: 2.5rem;
+    /* Space between sections */
+    --sidebar-spacing: 1.5rem;
+    /* Padding around sidebar content */
+
+    /* Fonts */
+    --font-primary: 'Work Sans', sans-serif;
+    /* Main font */
+    --font-secondary: 'Nunito', sans-serif;
+    /* Secondary font (not used in this CSS) */
+    --base-font-size: 1rem;
+    /* Base font size for body text */
+    --h1-font-size: 2rem;
+    /* Font size for main headings */
+    --h2-font-size: 1.75rem;
+    /* Font size for sub-headings */
+    --h3-font-size: 1.5rem;
+    /* Font size for sub-sub-headings */
+    --h4-font-size: 1.25rem;
+    /* Font size for the smallest headings */
+
+    /* Other */
+    --base-line-height: 1.5;
+    /* Base line height for text */
+    --section-separator: 1px solid var(--color-accent);
+    /* Line to separate sections */
+    --icon-font-size: 2rem;
+    /* Size of the font icons */
+    --transition-speed: 0.3s;
+    /* Transition speed for link hover effects */
+
+    /* Link hover color */
+}
+
+/* Global styles for HTML and body elements, including a reset for default browser styles */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    font-family: var(--font-primary);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--color-primary);
+    /* Include padding and border in element's total width and height */
+}
+
+nav {
+    font-family: var(--font-secondary);
+    font-size: var(--h4-font-size);
+    /* Use secondary font for navigation links */
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: rgb(194, 218, 213);
+      
+      li {
+        float: left;
+      }
+      
+      ul li a {
+        display: inline-block;
+        padding: 8px;
+      }
+}
+
+body {
+    background: url('/images/ocean.webp'); 
+    /* Background image */
+    background-size: cover;
+    /* Scale the background image to be as large as possible */
+    color: var(--color-primary);
+    /* Main text color */
+    font-size: var(--base-font-size);
+    /* Base font size */
+    line-height: var(--base-line-height);
+    /* Base line height */
+}
+
+.container {
+    width: 70vw;
+    height: 43.2632880099vw;
+    border: 0.5px solid #4A4949;
+    display: grid;
+    grid-template-columns: 61.8% 9.02% 5.58% 23.6%;
+    grid-template-rows: 61.8% 9.02% 5.58% 23.6%;
+    grid-template-areas: "A B B B" "A C D B" "A C D B" "A D D C"
+  }
+  .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    color: #F2F2F2;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-shadow: 1px 1px 1px #878787;
+    box-sizing: border-box;
+    border: 0.5px solid #4A4949;
+  }
+  .item-hero {
+    grid-area: A;
+    background-color: #fdffef;
+  }
+  .item-projects {
+    grid-area: B;
+    background-color: #c1cefe;
+  }
+  .item-Articles {
+    grid-area: C;
+    background-color: #758ecd;
+  }
+  .item-professional-links {
+    grid-area: D;
+    background-color: #7189ff;
+  }
+
+
+.sidebar {
+    flex: 1;
+    /* Take up 1 fraction of the available space */
+    display: flex;
+    /* Apply Flexbox layout */
+    flex-direction: column;
+    /* Stack the children vertically */
+    justify-content: space-between;
+    /* Distribute space evenly between the children */
+    padding: var(--sidebar-spacing);
+    /* Add padding around the sidebar content */
+    background-color: var(--color-secondary);
+    /* Background color of the sidebar */
+    color: rgb(0, 0, 0);
+    /* Text color in the sidebar */
+}
+
+.links {
+    display: flex;
+    /* Apply Flexbox layout */
+    justify-content: space-between;
+    /* Distribute space evenly between the children */
+    padding: 0.5rem;
+    /* Add padding around the links */
+}
+
+.links a {
+    color: inherit;
+    /* Use the parent's text color */
+    font-size: var(--icon-font-size);
+    /* Icon size */
+    text-decoration: none;
+    /* Remove the underline from links */
+    transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+    /* Add transition effects for link hover */
+}
+
+.links a:hover {
+    color: var(--hover-color);
+    /* Change text color on hover */
+    transform: scale(1.1);
+    /* Enlarge the link on hover */
+}
+
+.main-content {
+    flex: 3;
+    /* Take up 3 fractions of the available space */
+    padding: var(--section-spacing);
+    /* Add padding around the main content */
+}
+
+.main-content section,
+.main-content header {
+    margin-bottom: var(--section-spacing);
+    /* Add space below each section */
+    padding-bottom: var(--section-spacing);
+    /* Add padding at the bottom of each section */
+    border-bottom: var(--section-separator);
+    /* Add a line below each section */
+}
+
+.main-content section:last-child {
+    margin-bottom: 0;
+    /* Remove the bottom margin from the last section */
+    border-bottom: none;
+    /* Remove the line from the last section */
+}
+
+.menu {
+    display: flex; /* Display menu items horizontally */
+    justify-content: space-between; /* Spread menu items evenly */
+    align-items: center; /* Center vertically */
+
+  }
+
+  .menu-item {
+    list-style: none; /* Remove list bullets */
+    margin: 0; /* Remove default list margins */
+    padding: 0; /* Remove default list padding */
+    display: flex;
+  }
+
+  .menu-item ul a {
+    text-decoration: none; /* Remove underline from links */
+    color: var(--color-primary); /* Set link text color */
+  }
+  
+  .menu-item ul a:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
+
+
+footer {
+    text-align: center;
+    /* Center align the text */
+    padding: var(--section-spacing);
+    /* Add padding around the footer content */
+    border-top: var(--section-separator);
+    /* Add a line above the footer */
+    font-family: var(--font-secondary);
+    font-size: var(--h4-font-size);
+    /* Use secondary font for navigation links */
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: rgb(194, 218, 213);
+      
+      li {
+        float: left;
+      }
+      
+      li a {
+        display: block;
+        padding: 8px;
+      }
+}
+/* Responsive design: apply different styles when the viewport width is 768px or less */
+
+@media (max-width: 768px) {
+    body {
+        background: none;
+        /* Remove background image */
+    }
+
+    .container {
+        flex-direction: column;
+        /* Stack children vertically */
+        margin: 0 auto;
+        /* Centrally align the container horizontally */
+        padding: 0;
+        /* Remove padding */
+        width: 100%;
+        /* Full width of the viewport */
+    }
+
+    .main-content {
+        padding-top: 1rem;
+        /* Add padding at the top of the main content */
+    }
+}
+
+
+@media print {
+    :root {
+        --base-font-size: 12pt;
+    }
+
+    /* Reset */
+    *,
+    *::before,
+    *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Times New Roman", serif;
+        color: #333;
+    }
+
+    .container {
+        flex-direction: column;
+        margin: 0.1rem;
+    }
+
+    .main-content,
+    p {
+        padding: 0.2rem;
+    }
+
+
+    .main-content {
+        padding-top: 0.2rem;
+    }
+
+    p {
+        text-align: justify;
+        margin-bottom: 0.2rem;
+    }
+
+
+    .links,
+    h1{
+        display: none;
+    }
+
+    .main-content section,
+    .main-content header {
+        margin-bottom: calc(.8 * var(--section-spacing));
+        padding-bottom: calc(.8 *var(--section-spacing));
+        border-bottom: calc(.8 *var(--section-separator));
+    }
+
+}
