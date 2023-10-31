@@ -18,6 +18,16 @@ test('check that the viewport meta tag is present', async ({ page }) => {
   await expect(metaViewport).toBe('width=device-width, initial-scale=1.0');
 });
 
+test('check that the title is "Personal Portfolio"', async ({ page }) => {
+  // Using the page title to check that the title is "Andre Henry"
+
+  await page.goto('/');
+await page.waitForTimeout(2000);
+const actualTitle = await page.title();
+console.log('Actual Title:', actualTitle);
+await expect(actualTitle).toBe('Personal Portfolio');
+});
+
 test('check that "Andre Henry" h1 is present', async ({ page }) => {
   // Using a locator to get the h1 element with the text "Andre Henry"
 
