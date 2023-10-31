@@ -80,14 +80,14 @@ nav {
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: #dddddd;
+        background-color: rgb(194, 218, 213);
       
       li {
         float: left;
       }
       
-      li a {
-        display: block;
+      ul li a {
+        display: inline-block;
         padding: 8px;
       }
 }
@@ -204,6 +204,29 @@ body {
     /* Remove the line from the last section */
 }
 
+.menu {
+    display: flex; /* Display menu items horizontally */
+    justify-content: space-between; /* Spread menu items evenly */
+    align-items: center; /* Center vertically */
+
+  }
+
+  .menu-item {
+    list-style: none; /* Remove list bullets */
+    margin: 0; /* Remove default list margins */
+    padding: 0; /* Remove default list padding */
+    display: flex;
+  }
+
+  .menu-item ul a {
+    text-decoration: none; /* Remove underline from links */
+    color: var(--color-primary); /* Set link text color */
+  }
+  
+  .menu-item ul a:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
+
 .skill-list {
     display: grid;
     /* Apply Grid layout */
@@ -243,7 +266,7 @@ footer {
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: #dddddd;
+        background-color: rgb(194, 218, 213);
       
       li {
         float: left;
