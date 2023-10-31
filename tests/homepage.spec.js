@@ -43,3 +43,11 @@ test('check that the "Professional Links" section is present', async ({ page }) 
   await expect(heading).toBeVisible();
 });
 
+test ('check that the links in the footer are present', async ({ page }) => {
+  // Using a locator to check the links in the footer
+
+  await page.goto('/');
+  const footer = page.locator('footer:has-text("Home")');
+  await expect(footer).toBeVisible();
+});
+
