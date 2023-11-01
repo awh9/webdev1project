@@ -71,6 +71,16 @@ test('check that the Full-stack Ecommerce Website project is present in the Proj
   await expect(page.locator('h2:has-text("' + specificH2Text + '")')).toBeVisible();
 });
 
+test('check that the Full-stack Ecommerce Website YouTube link is present and visible', async ({ page }) => {
+  const linkHref = 'http://youtube.com/IT202Project'; // URL of the YouTube link
+  await page.goto('/'); // Navigate to the page
+  // Wait for the link to appear
+  await page.waitForSelector(`a[href="${linkHref}"]`);
+  // Check if the link is visible
+  const link = page.locator(`a[href="${linkHref}"]`);
+  await expect(link).toBeVisible();
+});
+
 test('check that the Java sockets project is present in the Project section', async ({ page }) => {
   // Using a locator to get the h2 element with the specific text
   const specificH2Text = 'Chatroom - Java Sockets (09/2022 - 12/2022)'; // Replace with the actual text you want to match
@@ -87,7 +97,6 @@ test('check that the Unity XR game project is present in the Project section', a
 
 test('check that the "Articles" section is present', async ({ page }) => {
   // Using a locator to get the h1 element with the text "About"
-
   await page.goto('/');
   const heading = page.locator('h1:has-text("Articles")');
   await expect(heading).toBeVisible();
