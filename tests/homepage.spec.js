@@ -60,6 +60,12 @@ test('Check Sidebar Area', async ({ page }) => {
   await expect(page.locator('body > .container > aside.sidebar')).toBeVisible();
 });
 
+/* This test checks that the profile image is visible on the resume page */
+test('Check Profile Image', async ({ page }) => {
+  await page.goto('/resume.html');
+  await expect(page.locator('.portrait img')).toBeVisible();
+});
+
 test('check that "Andre Henry" h1 is present', async ({ page }) => {
   // Using a locator to get the h1 element with the text "Andre Henry"
 
