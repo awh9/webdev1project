@@ -29,7 +29,7 @@ await expect(actualTitle).toBe('Personal Portfolio');
 });
 
 test('check that links are present in the nav tag', async ({ page }) => {
-  // Using a locator to check the links in the nav tag
+  // Using a locator to check the links in the nav tag are present
   await page.goto('/');
   const nav = page.locator('nav:has-text("Home")');
   await expect(nav).toBeVisible();
