@@ -41,6 +41,13 @@ test('check that links are present in the nav tag', async ({ page }) => {
   await expect(nav).toBeVisible();
 });
 
+/* This test checks that the page title on the resume page is not empty */
+test('Check Page Title', async ({ page }) => {
+  await page.goto('/resume.html');
+  const title = await page.title();
+  await expect(title).not.toBe('');
+});
+
 /* This test checks that the main content area is present on the resume page */
 test('Check Main Content Area', async ({ page }) => {
   await page.goto('/resume.html');
