@@ -43,6 +43,19 @@ test('check that "Andre Henry" h1 is present', async ({ page }) => {
   await expect(heading).toBeVisible();
 });
 
+test('check that "Cyber Security Analyst & Web Developer" h2 is present', async ({ page }) => {
+  // Using a locator to get the h2 element with the text "Cyber Security Analyst & Web Developer"
+  await page.goto('/');
+  const heading = page.locator('h2:has-text("Cyber Security Analyst & Web Developer")');
+  await expect(heading).toBeVisible();
+});
+
+test('check hero image is present', async ({ page }) => {
+  // Using a locator to get the hero image
+  await page.goto('/');
+  await expect(page.locator('.hero-image img')).toBeVisible();
+});
+
 test('check that the "Projects" section is present', async ({ page }) => {
   // Using a locator to get the h1 element with the text "Projects"
 
