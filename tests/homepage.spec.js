@@ -64,6 +64,13 @@ test('check that the "Projects" section is present', async ({ page }) => {
   await expect(heading).toBeVisible();
 });
 
+test('check that the Full-stack Ecommerce Website h2 element is present in the Project section', async ({ page }) => {
+  // Using a locator to get the h2 element with the specific text
+  const specificH2Text = 'Full-stack Ecommerce Website (09/2022 - 12/2022) '; // Replace with the actual text you want to match
+  await page.goto('/');
+  await expect(page.locator('h2:has-text("' + specificH2Text + '")')).toBeVisible();
+});
+
 test('check that the "Articles" section is present', async ({ page }) => {
   // Using a locator to get the h1 element with the text "About"
 
