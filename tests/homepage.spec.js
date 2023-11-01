@@ -28,6 +28,13 @@ console.log('Actual Title:', actualTitle);
 await expect(actualTitle).toBe('Personal Portfolio');
 });
 
+test('check that links are present in the nav tag', async ({ page }) => {
+  // Using a locator to check the links in the nav tag
+  await page.goto('/');
+  const nav = page.locator('nav:has-text("Home")');
+  await expect(nav).toBeVisible();
+});
+
 test('check that "Andre Henry" h1 is present', async ({ page }) => {
   // Using a locator to get the h1 element with the text "Andre Henry"
 
