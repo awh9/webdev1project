@@ -27,7 +27,6 @@ test('Check SEO Meta Keywords', async ({ page }) => {
 
 test('check that the title is "Personal Portfolio"', async ({ page }) => {
   // Using the page title to check that the title is "Andre Henry"
-
   await page.goto('/');
 await page.waitForTimeout(2000);
 const actualTitle = await page.title();
@@ -40,6 +39,12 @@ test('check that links are present in the nav tag', async ({ page }) => {
   await page.goto('/');
   const nav = page.locator('nav:has-text("Home")');
   await expect(nav).toBeVisible();
+});
+
+/* This test checks that the main content area is present on the resume page */
+test('Check Main Content Area', async ({ page }) => {
+  await page.goto('/resume.html');
+  await expect(page.locator('body > .container > .main-content')).toBeVisible();
 });
 
 test('check that "Andre Henry" h1 is present', async ({ page }) => {
