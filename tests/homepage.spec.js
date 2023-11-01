@@ -28,12 +28,32 @@ console.log('Actual Title:', actualTitle);
 await expect(actualTitle).toBe('Personal Portfolio');
 });
 
+test('check that links are present in the nav tag', async ({ page }) => {
+  // Using a locator to check the links in the nav tag are present
+  await page.goto('/');
+  const nav = page.locator('nav:has-text("Home")');
+  await expect(nav).toBeVisible();
+});
+
 test('check that "Andre Henry" h1 is present', async ({ page }) => {
   // Using a locator to get the h1 element with the text "Andre Henry"
 
   await page.goto('/');
   const heading = page.locator('h1:has-text("Andre Henry")');
   await expect(heading).toBeVisible();
+});
+
+test('check that "Cyber Security Analyst & Web Developer" h2 is present', async ({ page }) => {
+  // Using a locator to get the h2 element with the text "Cyber Security Analyst & Web Developer"
+  await page.goto('/');
+  const heading = page.locator('h2:has-text("Cyber Security Analyst & Web Developer")');
+  await expect(heading).toBeVisible();
+});
+
+test('check hero image is present', async ({ page }) => {
+  // Using a locator to get the hero image
+  await page.goto('/');
+  await expect(page.locator('.hero-image img')).toBeVisible();
 });
 
 test('check that the "Projects" section is present', async ({ page }) => {
