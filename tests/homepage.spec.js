@@ -78,6 +78,13 @@ test('check that the Java sockets project is present in the Project section', as
   await expect(page.locator('h2:has-text("' + specificH2Text + '")')).toBeVisible();
 });
 
+test('check that the Unity XR game project is present in the Project section', async ({ page }) => {
+  // Using a locator to get the h2 element with the specific text
+  const specificH2Text = 'Unity XR Game (01/2023 - 05/2023)'; // Replace with the actual text you want to match
+  await page.goto('/');
+  await expect(page.locator('h2:has-text("' + specificH2Text + '")')).toBeVisible();
+});
+
 test('check that the "Articles" section is present', async ({ page }) => {
   // Using a locator to get the h1 element with the text "About"
 
