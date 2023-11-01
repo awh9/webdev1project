@@ -81,6 +81,16 @@ test('check that the Full-stack Ecommerce Website YouTube link is present and vi
   await expect(link).toBeVisible();
 });
 
+test('check that the Java Sockets project YouTube link is present and visible', async ({ page }) => {
+  const linkHref = 'http://www.youtube.com/IT114'; // URL of the YouTube link
+  await page.goto('/'); // Navigate to the page
+  // Wait for the link to appear
+  await page.waitForSelector(`a[href="${linkHref}"]`);
+  // Check if the link is visible
+  const link = page.locator(`a[href="${linkHref}"]`);
+  await expect(link).toBeVisible();
+});
+
 test('check that the Java sockets project is present in the Project section', async ({ page }) => {
   // Using a locator to get the h2 element with the specific text
   const specificH2Text = 'Chatroom - Java Sockets (09/2022 - 12/2022)'; // Replace with the actual text you want to match
