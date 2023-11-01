@@ -47,6 +47,12 @@ test('Check Main Content Area', async ({ page }) => {
   await expect(page.locator('body > .container > .main-content')).toBeVisible();
 });
 
+/* This test checks that the sidebar area is present on the resume page */
+test('Check Sidebar Area', async ({ page }) => {
+  await page.goto('/resume.html');
+  await expect(page.locator('body > .container > aside.sidebar')).toBeVisible();
+});
+
 test('check that "Andre Henry" h1 is present', async ({ page }) => {
   // Using a locator to get the h1 element with the text "Andre Henry"
 
