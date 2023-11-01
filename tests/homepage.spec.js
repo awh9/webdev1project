@@ -18,6 +18,13 @@ test('check that the viewport meta tag is present', async ({ page }) => {
   await expect(metaViewport).toBe('width=device-width, initial-scale=1.0');
 });
 
+/* This test checks that the meta keywords for SEO are not empty */
+test('Check SEO Meta Keywords', async ({ page }) => {
+  await page.goto('/');
+  const metaKeywords = await page.getAttribute('meta[name="keywords"]', 'content');
+  await expect(metaKeywords).not.toBe('');
+});
+
 test('check that the title is "Personal Portfolio"', async ({ page }) => {
   // Using the page title to check that the title is "Andre Henry"
 
