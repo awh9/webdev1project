@@ -98,12 +98,12 @@ body {
 }
 
 .container {
-    width: 70vw;
+    width: 99vw;
     height: 43.2632880099vw;
-    border: 0.5px solid #4A4949;
+    border: 0.5px solid #ffffff;
     display: grid;
-    grid-template-columns: 61.8% 9.02% 5.58% 23.6%;
-    grid-template-rows: 61.8% 9.02% 5.58% 23.6%;
+    grid-template-columns: 60% 9% 4% 27%; /* Approximately 60%, 9%, 4%, 27% */
+    grid-template-rows: 60% 4% 9% 27%; /* Approximately 60%, 4%, 9%, 27% */
     grid-template-areas: 
         "A B B B"
         "A . . C"
@@ -127,6 +127,13 @@ body {
   .item-hero {
     grid-area: A;
     background-color: #fdffef;
+  }
+
+  .hero-image {
+    width: 80%;
+    height: 50%;
+    object-fit: cover;
+    object-position: center;
   }
   .item-projects {
     grid-area: B;
