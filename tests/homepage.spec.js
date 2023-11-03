@@ -8,7 +8,7 @@ test('check that UTF-8 meta tag is present', async ({ page }) => {
   const metaCharset = await page.$eval('meta[charset]', (meta) => meta.getAttribute('charset'));
 
   //Assert: Check if the charset is set to utf-8
-  await expect(metaCharset).toBe('utf-8');
+  await expect(metaCharset).toBe('UTF-8');
 });
 
 test('check that the viewport meta tag is present', async ({ page }) => {
@@ -32,13 +32,6 @@ await page.waitForTimeout(2000);
 const actualTitle = await page.title();
 console.log('Actual Title:', actualTitle);
 await expect(actualTitle).toBe('Personal Portfolio');
-});
-
-test('check that links are present in the nav tag', async ({ page }) => {
-  // Using a locator to check the links in the nav tag are present
-  await page.goto('/');
-  const nav = page.locator('nav:has-text("Home")');
-  await expect(nav).toBeVisible();
 });
 
 /* This test checks that the page title on the resume page is not empty */
@@ -74,37 +67,37 @@ test('check that "Andre Henry" h1 is present', async ({ page }) => {
   await expect(heading).toBeVisible();
 });
 
-test('check that "Cyber Security Analyst & Web Developer" h2 is present', async ({ page }) => {
-  // Using a locator to get the h2 element with the text "Cyber Security Analyst & Web Developer"
+test('check that "Cyber Security Analyst & Web Developer" p is present', async ({ page }) => {
+  // Using a locator to get the p element with the text "Cyber Security Analyst & Web Developer"
   await page.goto('/');
-  const heading = page.locator('h2:has-text("Cyber Security Analyst & Web Developer")');
+  const heading = page.locator('p:has-text("Cyber Security Analyst & Web Developer")');
   await expect(heading).toBeVisible();
 });
 
-test('check hero image is present', async ({ page }) => {
+test('check hero2 image is present', async ({ page }) => {
   // Using a locator to get the hero image
   await page.goto('/');
-  await expect(page.locator('.hero-image img')).toBeVisible();
+  await expect(page.locator('.hero2-image img')).toBeVisible();
 });
 
 test('check that the "Projects" section is present', async ({ page }) => {
-  // Using a locator to get the h1 element with the text "Projects"
+  // Using a locator to get the h2 element with the text "Projects"
 
   await page.goto('/');
-  const heading = page.locator('h1:has-text("Projects")');
+  const heading = page.locator('h2:has-text("Projects")');
   await expect(heading).toBeVisible();
 });
 
 test('check that the Full-stack Ecommerce Website project is present in the Project section', async ({ page }) => {
-  // Using a locator to get the h2 element with the specific text
-  const specificH2Text = 'Full-stack Ecommerce Website (09/2022 - 12/2022) '; // Replace with the actual text you want to match
+  // Using a locator to get the h3 element with the specific text
+  const specificH3Text = 'Full-stack Ecommerce Website'; // Replace with the actual text you want to match
   await page.goto('/');
-  await expect(page.locator('h2:has-text("' + specificH2Text + '")')).toBeVisible();
+  await expect(page.locator('h3:has-text("' + specificH3Text + '")')).toBeVisible();
 });
 
 test('check that the Full-stack Ecommerce Website YouTube link is present and visible', async ({ page }) => {
-  const linkHref = 'http://youtube.com/IT202Project'; // URL of the YouTube link
-  await page.goto('/'); // Navigate to the page
+  const linkHref = 'https://github.com/awh9/IT202/tree/prod'; // URL of the YouTube link
+  await page.goto('/resume.html'); // Navigate to the page
   // Wait for the link to appear
   await page.waitForSelector(`a[href="${linkHref}"]`);
   // Check if the link is visible
@@ -113,8 +106,8 @@ test('check that the Full-stack Ecommerce Website YouTube link is present and vi
 });
 
 test('check that the Java Sockets project YouTube link is present and visible', async ({ page }) => {
-  const linkHref = 'http://www.youtube.com/IT114'; // URL of the YouTube link
-  await page.goto('/'); // Navigate to the page
+  const linkHref = 'https://www.youtube.com/watch?v=3HqrtGiEWQM'; // URL of the YouTube link
+  await page.goto('/resume.html'); // Navigate to the page
   // Wait for the link to appear
   await page.waitForSelector(`a[href="${linkHref}"]`);
   // Check if the link is visible
@@ -124,7 +117,7 @@ test('check that the Java Sockets project YouTube link is present and visible', 
 
 test('check that the Unity XR project link is present and visible', async ({ page }) => {
   const linkHref = 'https://ahenry777.itch.io/it-201-sprint-4'; // URL of the YouTube link
-  await page.goto('/'); // Navigate to the page
+  await page.goto('/resume.html'); // Navigate to the page
   // Wait for the link to appear
   await page.waitForSelector(`a[href="${linkHref}"]`);
   // Check if the link is visible
@@ -133,39 +126,39 @@ test('check that the Unity XR project link is present and visible', async ({ pag
 });
 
 test('check that the Java sockets project is present in the Project section', async ({ page }) => {
-  // Using a locator to get the h2 element with the specific text
-  const specificH2Text = 'Chatroom - Java Sockets (09/2022 - 12/2022)'; // Replace with the actual text you want to match
+  // Using a locator to get the h3 element with the specific text
+  const specificH3Text = 'Chatroom - Java Sockets'; // Replace with the actual text you want to match
   await page.goto('/');
-  await expect(page.locator('h2:has-text("' + specificH2Text + '")')).toBeVisible();
+  await expect(page.locator('h3:has-text("' + specificH3Text + '")')).toBeVisible();
 });
 
 test('check that the Unity XR game project is present in the Project section', async ({ page }) => {
-  // Using a locator to get the h2 element with the specific text
-  const specificH2Text = 'Unity XR Game (01/2023 - 05/2023)'; // Replace with the actual text you want to match
+  // Using a locator to get the h3 element with the specific text
+  const specificH3Text = 'Unity XR Game'; // Replace with the actual text you want to match
   await page.goto('/');
-  await expect(page.locator('h2:has-text("' + specificH2Text + '")')).toBeVisible();
+  await expect(page.locator('h3:has-text("' + specificH3Text + '")')).toBeVisible();
 });
 
 test('check that the "Articles" section is present', async ({ page }) => {
-  // Using a locator to get the h1 element with the text "About"
+  // Using a locator to get the h2 element with the text "About"
   await page.goto('/');
-  const heading = page.locator('h1:has-text("Articles")');
+  const heading = page.locator('h2:has-text("Articles")');
   await expect(heading).toBeVisible();
 });
 
 test('check that the "Professional Links" section is present', async ({ page }) => {
-  // Using a locator to get the h1 element with the text "Professional Links"
+  // Using a locator to get the h2 element with the text "Professional Links"
 
   await page.goto('/');
-  const heading = page.locator('h1:has-text("Professional Links")');
+  const heading = page.locator('h2:has-text("Professional Links")');
   await expect(heading).toBeVisible();
 });
 
-test ('check that the links in the footer are present', async ({ page }) => {
+test ('check that the footer has text', async ({ page }) => {
   // Using a locator to check the links in the footer
 
   await page.goto('/');
-  const footer = page.locator('footer:has-text("Home")');
+  const footer = page.locator('footer:has-text("©Henry 2023")');
   await expect(footer).toBeVisible();
 });
 
