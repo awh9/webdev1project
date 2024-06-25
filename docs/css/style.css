@@ -239,7 +239,7 @@ body {
   width: 100%; /* Makes the image fill the width of its container */
   height: auto; /* Maintains the aspect ratio of the image */
   max-height: 100%; /* Ensures the image does not overflow its container */
-  object-fit: cover; /* Ensures the image covers the area without stretching */
+  object-fit:scale-down; /* Ensures the image covers the area without stretching */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional: adds a shadow for depth */
 }
 
