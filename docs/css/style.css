@@ -6,11 +6,15 @@ body {
   font-family: 'Work Sans', sans-serif; /* Your chosen font */
 }
 
+
+
+
 /* Navbar styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
+
 
 .navbar {
   background-color: #333; /* Dark background for the navbar */
@@ -21,6 +25,7 @@ body {
   z-index: 1000;
 }
 
+
 .navbar a {
   float: left;
   display: block;
@@ -29,6 +34,7 @@ body {
   padding: 14px 20px;
   text-decoration: none;
 }
+
 
 .navbar ul {
   list-style-type: none;
@@ -42,48 +48,47 @@ body {
   transition: color 0.3s ease;
 }
 
+
 .navbar li {
   display: flex;
 }
+
 
 .navbar a:hover {
   background-color: #ddd;
   color: black;
 }
 
+
 /* Hero styles */
-.hero2-content {
+.hero {
   background-color: #1c1c1c; /* Dark background for the hero section */
   color: #f5f5f5; /* Light text color for contrast */
   text-align: center; /* Center the text */
   padding: 50px 0; /* Padding above and below the hero content */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.hero2-image {
-  max-width: 200px; /* Maximum width of the image */
-  border-radius: 50%; /* Make the image round */
-  border: 4px solid #333; /* Dark border for the image */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
-  margin-bottom: 20px; /* Space between the image and the text */
-}
-
-.hero-content {
-  max-width: 600px; /* Optional: limit the width of the text content */
-}
 
 .hero-content h1 {
   font-size: 2.5rem; /* Large font size for the name */
   margin-bottom: 0.5rem; /* Space below the name */
 }
 
+
 .hero-content .title {
   font-size: 1.5rem; /* Smaller font size for the title */
   color: #a9a9a9; /* Slightly lighter text color for the title */
   margin-bottom: 1.5rem; /* Space below the title */
 }
+
+
+.hero-image {
+  max-width: 200px; /* Maximum width of the image */
+  border-radius: 50%; /* Make the image round */
+  border: 4px solid #333; /* Dark border for the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
 
 /* Projects section styles */
 .projects-section {
@@ -93,16 +98,19 @@ body {
   text-align: center; /* Center the text */
 }
 
+
 .section-title {
   font-size: 2rem; /* Font size for section titles */
   margin-bottom: 1rem; /* Space below the section title */
 }
+
 
 .projects-container {
   display: flex; /* Use flexbox to layout project cards */
   justify-content: space-between; /* Distribute space evenly between the project cards */
   flex-wrap: nowrap; /* Prevent the cards from wrapping to the next line */
 }
+
 
 .project-card {
   width: calc(33.333% - 2rem); /* Adjust width to fit three cards in a row, subtracting the total margin */
@@ -113,16 +121,21 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
 }
 
+
 .project-card h3 {
   font-size: 1.5rem; /* Font size for project titles */
   color: #a9a9a9; /* Slightly lighter text color for the titles */
   margin-bottom: 0.5rem; /* Space below the project title */
 }
 
+
 .project-card p {
   font-size: 1rem; /* Font size for project descriptions */
   line-height: 1.5; /* Line height for readability */
 }
+
+
+
 
 .articles-section {
   background-color: #333; /* Dark background for the section */
@@ -130,17 +143,20 @@ body {
   padding: 2rem; /* Padding around the section */
 }
 
+
 .section-title {
   text-align: center;
   margin-bottom: 2rem;
   color: #fff; /* Light text color for the title */
 }
 
+
 .articles-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
 }
+
 
 .article-card {
   width: calc(33.333% - 2rem);
@@ -152,6 +168,7 @@ body {
   border-radius: 4px; /* Rounded corners for the cards */
 }
 
+
 .article-title {
   display: block; /* Make the link fill the line */
   color: #88b7d8; /* Light blue color for the link */
@@ -160,22 +177,26 @@ body {
   text-decoration: none; /* No underline by default */
 }
 
+
 .article-title:hover {
   text-decoration: underline; /* Underline on hover */
   color: #bbd0e8; /* Lighter blue on hover */
 }
 
+
 /* Ensure that the cards do not wrap on smaller screens */
 @media (max-width: 768px) {
   .articles-container {
-    flex-direction: column;
+      flex-direction: column;
   }
 
+
   .article-card {
-    width: auto; /* Full width on small screens */
-    margin: 1rem 0;
+      width: auto; /* Full width on small screens */
+      margin: 1rem 0;
   }
 }
+
 
 .professional-section {
   text-align: center;
@@ -184,12 +205,14 @@ body {
   color: #fff;
 }
 
+
 .professional-links {
   display: flex;
   justify-content: center;
   gap: 2rem; /* Adjust the space between the icons as needed */
   padding: 1rem;
 }
+
 
 .professional-links a {
   color: #fff;
@@ -198,13 +221,16 @@ body {
   transition: color 0.3s ease;
 }
 
+
 .professional-links a:hover {
   color: #88b7d8;
 }
 
+
 .professional-links i {
   margin-right: 0.5rem;
 }
+
 
 .footer {
   background-color: #333; /* Or any dark color you prefer */
@@ -214,11 +240,13 @@ body {
   margin-top: 2rem; /* Space above the footer */
 }
 
+
 .footer p {
   margin: 0; /* Resets any default margin */
   padding: 0; /* Resets any default padding */
   color: #fff; /* Ensures the text is white */
 }
+
 
 /* Hero2 styles */
 .hero2 {
@@ -231,14 +259,19 @@ body {
   margin: 0 auto; /* Centers the section if it's not full width */
 }
 
+
 .hero2-content {
   flex-basis: 40%; /* Adjusted for a larger image area */
   text-align: left;
+
+
 }
+
 
 .hero2-image {
   flex-basis: 60%; /* Increased space for the image */
 }
+
 
 .hero2-image img {
   width: 100%; /* Makes the image fill the width of its container */
@@ -248,6 +281,7 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional: adds a shadow for depth */
 }
 
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .hero2 {
@@ -255,10 +289,12 @@ body {
     text-align: center;
   }
 
+
   .hero2-content,
   .hero2-image {
     flex-basis: 100%;
   }
+
 
   .hero2-image {
     margin-top: var(--base-spacing);
