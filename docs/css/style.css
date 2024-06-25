@@ -6,7 +6,6 @@ body {
   font-family: 'Work Sans', sans-serif; /* Your chosen font */
 }
 
-
 /* Navbar styles */
 body {
   margin: 0;
@@ -58,6 +57,21 @@ body {
   color: #f5f5f5; /* Light text color for contrast */
   text-align: center; /* Center the text */
   padding: 50px 0; /* Padding above and below the hero content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-image {
+  max-width: 200px; /* Maximum width of the image */
+  border-radius: 50%; /* Make the image round */
+  border: 4px solid #333; /* Dark border for the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+  margin-bottom: 20px; /* Space between the image and the text */
+}
+
+.hero-content {
+  max-width: 600px; /* Optional: limit the width of the text content */
 }
 
 .hero-content h1 {
@@ -69,13 +83,6 @@ body {
   font-size: 1.5rem; /* Smaller font size for the title */
   color: #a9a9a9; /* Slightly lighter text color for the title */
   margin-bottom: 1.5rem; /* Space below the title */
-}
-
-.hero-image {
-  max-width: 200px; /* Maximum width of the image */
-  border-radius: 50%; /* Make the image round */
-  border: 4px solid #333; /* Dark border for the image */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
 }
 
 /* Projects section styles */
@@ -116,7 +123,6 @@ body {
   font-size: 1rem; /* Font size for project descriptions */
   line-height: 1.5; /* Line height for readability */
 }
-
 
 .articles-section {
   background-color: #333; /* Dark background for the section */
@@ -162,12 +168,12 @@ body {
 /* Ensure that the cards do not wrap on smaller screens */
 @media (max-width: 768px) {
   .articles-container {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .article-card {
-      width: auto; /* Full width on small screens */
-      margin: 1rem 0;
+    width: auto; /* Full width on small screens */
+    margin: 1rem 0;
   }
 }
 
@@ -228,7 +234,6 @@ body {
 .hero2-content {
   flex-basis: 40%; /* Adjusted for a larger image area */
   text-align: left;
-
 }
 
 .hero2-image {
@@ -259,4 +264,3 @@ body {
     margin-top: var(--base-spacing);
   }
 }
-
