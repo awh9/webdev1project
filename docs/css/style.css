@@ -218,7 +218,7 @@ body {
 .hero2 {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start; /* Aligns items to the start */ /* space-around; */
   padding: var(--base-spacing);
   color: #fff;
   background-color: var(--color-primary);
