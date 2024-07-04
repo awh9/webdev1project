@@ -72,25 +72,45 @@ p {
     /* Include padding and border in element's total width and height */
 }
 
-nav {
-    font-family: var(--font-secondary);
-    font-size: var(--h4-font-size);
-    /* Use secondary font for navigation links */
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: rgb(194, 218, 213);
-      
-      li {
-        float: left;
-      }
-      
-      ul li a {
-        display: inline-block;
-        padding: 8px;
-      }
-}
+
+/* Navbar styles */
+.navbar {
+    background-color: teal;
+    color: teal;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  /* Navigation links */
+  .navbar a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+  
+  /* Unordered list styles */
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  /* List item styles */
+  .navbar li {
+    display: flex;
+  }
+  
+  /* Hover effect for navigation links */
+  .navbar a:hover {
+    background-color: #023047;
+    color: black;
+  }
 
 body {
     background: url('../images/ocean.webp'); 

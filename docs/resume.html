@@ -16,6 +16,49 @@
 
     <link rel="stylesheet" type="text/css" href="css/main.css"> <!-- Links the main css file for styles -->
 
+    <style>
+        /* Navbar styles */
+        .navbar {
+            background-color: teal;
+            color: teal;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar a {
+            color: #023047;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .navbar li {
+            display: flex;
+        }
+
+        .navbar a:hover {
+            background-color: teal;
+            color: black;
+        }
+
+    </style>
     <!-- Preloads font awesome stylesheet for icons, this helps speed up loading as the stylesheet is loaded in the background -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -34,23 +77,15 @@
 </head> <!-- Closes the head tag -->
 
 <header>
-    <nav>
-
-    <div class = "menu">
-        <div class = "wrapper">
-        <div class ="menu-item">
-            <ul>
-                <a href = "index.html">Home</a>
-            </ul>
-            <ul>
-                <a href = "resume.html">Resume</a>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html#home" class="navbar-brand">André Henry</a>
+            <ul class="navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
             </ul>
         </div>
-            </ul>
-        </div>
-    </div>
-    </div>
-</nav>
+    </nav>
 </header>
 
 <body> <!-- Opens the body tag, this is where the content of the webpage goes -->
@@ -68,7 +103,7 @@
                 <h3>Network Automation  | Cyber Security Analyst</h3> <!-- Job title of the resume owner -->
                 <div class="links"> <!-- A div to hold all social media and contact links -->
                     <!-- Each link also has an aria-label attribute to describe the link to screen readers -->
-                    <a href="https://www.linkedin.com/in/andre%CC%81-henry-162703221/" aria-label="André Henry's LinkedIn profile"><i
+                    <a href="https://www.linkedin.com/in/andre%CC%81-henry/" aria-label="André Henry's LinkedIn profile"><i
                             class="fab fa-linkedin"></i></a> <!-- LinkedIn link -->
                     <a href="https://github.com/awh9" aria-label="André Henry's GitHub profile"><i
                             class="fab fa-github"></i></a> <!-- Github link -->
@@ -196,17 +231,5 @@
         </main> <!-- Closes the main content -->
     </div> <!-- Closes the container -->
 </body> <!-- Closes the body -->
-
-<footer> 
-    <div class = "footer-link">
-    <ul>
-        <a href = "index.html">Home</a>
-    </ul>
-    <ul>
-        <a href = "resume.html">Resume</a>
-    </ul> 
-    </div>
-
-</footer>
 
 </html> <!-- Closes the HTML -->
