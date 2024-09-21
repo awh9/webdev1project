@@ -68,7 +68,7 @@
             color: #fff;
             background-color: #1e1e1e;
             margin: 80px auto 0;
-            max-width: 1200px;
+            max-width: 1000px;
         }
 
         .hero2-content {
@@ -173,6 +173,103 @@
             text-align: center;
             padding: 20px 0;
         }
+
+        /* Responsive Adjustments for Smaller Screens (Tablets) */
+    @media (max-width: 768px) {
+        body {
+            padding-left: 15px; /* Add padding to the sides */
+            padding-right: 15px;
+        }
+
+        .navbar ul {
+            display: block;
+            text-align: center;
+        }
+
+        .hero2 {
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .hero2-content, .hero2-image {
+            flex-basis: 100%;
+            text-align: center;
+            margin:auto;
+        }
+
+        .hero2-content h1 {
+            font-size: 1.8rem;
+        }
+
+        .projects-section {
+            padding: 10px;
+        }
+
+        .project-card {
+            min-width: 280px;
+        }
+
+        .professional-section {
+            padding: 15px;
+        }
+
+        .professional-links {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+        }
+    }
+
+    /* Responsive Adjustments for Very Small Screens (Mobile Phones) */
+    @media (max-width: 480px) {
+        body {
+            padding-left: 20px; /* Add smaller padding for mobile */
+            padding-right: 20px;
+        }
+
+        .navbar a {
+            padding: 10px;
+            font-size: 0.9rem;
+        }
+
+        .hero2-content h1 {
+            font-size: 1.5rem;
+        }
+
+        .hero2-content p {
+            font-size: 0.9rem;
+        }
+
+        .hero2-image img {
+            width: 90%;
+            margin:auto;
+            position: relative;
+        }
+
+        .project-card {
+            min-width: 250px;
+            margin: 5px;
+        }
+
+        .project-card h3 {
+            font-size: 1.2rem;
+        }
+
+        .project-card p {
+            font-size: 0.9rem;
+        }
+
+        .professional-links a {
+            font-size: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+        }
+    }
     </style>
 </head>
 <body>
