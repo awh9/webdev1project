@@ -79,8 +79,6 @@
 
         /* Main content styles */
         .main-content {
-             
-
             margin-left: 25%; /* Adjust for sidebar */
             padding: 20px;
             background-color: #1e1e1e; /* Match the sidebar background */
@@ -204,11 +202,16 @@
         /* Adjust the layout on smaller screens */
         @media screen and (max-width: 768px) {
             .sidebar {
-                width: 100%; /* Full-width sidebar on smaller devices */
+                width: auto; /* Full-width sidebar on smaller devices */
                 height: auto; /* Auto height for the sidebar */
                 position: relative; /* Place sidebar above content */
-                padding: 10px;
-                margin-bottom: 20px; /* Add space between sidebar and content */
+                padding: 0px;
+                margin-bottom: 10px; /* Add space between sidebar and content */
+            }
+
+            .main-content {
+                margin-left: 0; /* Remove margin for main content */
+                padding: 10px; /* Smaller padding for content */
             }
 
         .sidebar img {
@@ -256,12 +259,9 @@
             <section>
                 <h2 class="section-title">Education</h2>
                 <div class="education-item">
+                    <img src="images/njit logo.webp" alt="NJIT Logo" class = "school-logo">
                     <h3>M.S. Information Technology Administration and Security (2025 - 2026)</h3>
-                    <img src="images/njit logo.webp" alt="NJIT Logo" class = "school-logo">
-                </div>
-                <div class="education-item">
                     <h3>B.S. Information Technology (2021 - 2025)</h3>
-                    <img src="images/njit logo.webp" alt="NJIT Logo" class = "school-logo">
                 </div>
             </section>
 
