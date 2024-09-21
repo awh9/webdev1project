@@ -1,233 +1,301 @@
-<!DOCTYPE html> <!--Defines the document to be HTML5-->
-
-<html lang="en"> <!--Opens the html tag and sets the language of the document to English-->
-
-<head> <!-- Opens the head tag which contains meta information about the document -->
-
-    <meta charset="utf-8"> <!--Sets the character encoding for the document-->
-
-    <meta name="description" content="Resume"> <!-- Description of the webpage, often used by search engines -->
-
-    <meta name="keywords" content="resume, jobs, career, cyber security, web applications, network, network security"> <!-- Defines keywords for search engines -->
-
-    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Controls the viewport on mobile devices, making the website responsive -->
-
-    <title>André Henry Cyber Security Analyst / Network Automation Resume</title> <!-- The title of the document, appears in browser tab -->
-
-    <link rel="stylesheet" type="text/css" href="css/main.css"> <!-- Links the main css file for styles -->
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resume">
+    <meta name="keywords" content="resume, experience, skills, cyber security, network security">
+    <title>Resume - André Henry</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <style>
-        /* Navbar styles */
-        .navbar {
-            background-color: teal;
-            color: teal;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        .navbar a {
-            float: left;
-            display: block;
-            color: black;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-        }
-
-        .navbar ul {
-            list-style-type: none;
+        /* Global styles */
+        body {
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
+            background-color: #f4f4f4; /* Light background for contrast */
+            color: #333; /* Dark text color */
         }
 
-        .navbar a {
-            color: #023047;
+        h1, h2, h3, p {
+            color: #2c2c2c; /* Darker text for headings */
+        }
+
+        a {
+            color: #007bff; /* Link color */
             text-decoration: none;
-            transition: color 0.3s ease;
         }
 
-        .navbar li {
+        a:hover {
+            color: #0056b3; /* Darker link color on hover */
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 250px; /* Fixed width for sidebar */
+            height: 100%;
+            background-color: #2c2c2c; /* Sidebar color */
+            padding-top: 20px;
+            z-index: 1000;
             display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3); /* Shadow for depth */
         }
 
-        .navbar a:hover {
-            background-color: teal;
-            color: black;
+        .sidebar img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 4px solid #fff; /* White border around image */
+            object-fit: cover;
         }
 
+        .sidebar a {
+            padding: 15px;
+            text-align: center;
+            display: block;
+            color: #fff; /* White text for links */
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin-bottom: 10px;
+            width: 100%; /* Ensures sidebar links span the full width */
+        }
+
+        .sidebar a:hover {
+            background-color: #444; /* Darker background on hover */
+            color: #88b7d8; /* Light blue text on hover */
+        }
+
+        .sidebar i {
+            margin-right: 10px;
+        }
+
+        /* Main content styles */
+        .main-content {
+            margin-left: 270px; /* Adjust for sidebar */
+            padding: 20px;
+            max-width: calc(100% - 270px); /* Make content flexible */
+            background-color: #fff; /* White background for content */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for content depth */
+        }
+
+        .resume-section {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f8f8f8; /* Light gray for sections */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .resume-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .resume-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #007bff; /* Main color for header */
+        }
+
+        .resume-header p {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #007bff; /* Color for section title border */
+            padding-bottom: 5px;
+        }
+
+        .resume-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Skills Section */
+        .skills-item {
+            background-color: #ffffff; /* White background for skills */
+            padding: 15px; /* Adjusted padding */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .skills-item ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skills-item ul li {
+            padding: 8px 0;
+            font-size: 1rem;
+        }
+
+        .skills-item ul li i {
+            margin-right: 10px;
+            color: #007bff; /* Icon color */
+        }
+
+        /* Experience and Projects Sections */
+        .experience-item, .education-item, .projects-item {
+            background-color: #ffffff; /* White background for items */
+            padding: 15px; /* Adjusted padding */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .experience-item h3, .education-item h3, .projects-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #007bff; /* Main color for headings */
+        }
+
+        .experience-item p, .education-item p, .projects-item p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333; /* Dark footer */
+            color: #fff !important; /* White text for footer */
+            text-align: center;
+            padding: 20px 0;
+            position: relative; /* Position footer at the end of content */
+            bottom: 0;
+            width: 100%;
+        }
     </style>
-    <!-- Preloads font awesome stylesheet for icons, this helps speed up loading as the stylesheet is loaded in the background -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-        as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript> <!-- Provides a fallback in case JavaScript is disabled -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-    </noscript>
+</head>
+<body>
 
-    <!-- Preloads the Google fonts for the webpage, helps with performance -->
-    <link rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Work+Sans:wght@400;500&display=swap"
-        as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript> <!-- Provides a fallback in case JavaScript is disabled -->
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Work+Sans:wght@400;500&display=swap">
-    </noscript>
-</head> <!-- Closes the head tag -->
+<div class="sidebar">
+    <img src="images/Headshot SU.webp" alt="André Henry">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="index.html#projects"><i class="fas fa-folder-open"></i> Projects</a>
+    <a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a>
+    <a href="https://www.linkedin.com/in/andre%CC%81-henry/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a href="https://github.com/awh9" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+</div>
 
-<header>
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html#home" class="navbar-brand">André Henry</a>
-            <ul class="navbar-nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="resume.html">Resume</a></li>
-            </ul>
+<div class="main-content">
+    <div class="resume-section">
+        <div class="resume-header">
+            <h1>André Henry</h1>
+            <p>Cybersecurity | IT Administration | Network Automation</p>
         </div>
-    </nav>
-</header>
 
-<body> <!-- Opens the body tag, this is where the content of the webpage goes -->
+        <div class="resume-content">
 
-    <div class="container"> <!-- Container class will be used to style all the content within it -->
-
-        <aside class="sidebar" role="complementary"> <!-- The aside tag is used for content that is related but separate from the main content, often as a sidebar -->
-
-            <div class="sidebar-top"> <!-- A div to contain all elements on the top of the sidebar -->
-
-                <div class="portrait"> <!-- A div to hold the profile picture -->
-                    <img src="images/Headshot SU.webp" alt="Portrait of André Henry, Cyber Security Analyst"> <!-- The profile picture itself -->
+            <!-- Education Section -->
+            <section>
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <h3>M.S. Information Technology Administration and Security</h3>
+                    <p>New Jersey Institute of Technology </p> 
+                    <p>Expected Graduation: 2026</p>
                 </div>
-                <h2>André Henry</h2> <!-- Name of the resume owner -->
-                <h3>Cyber Security Analyst | Network Automation</h3> <!-- Job title of the resume owner -->
-                <div class="links"> <!-- A div to hold all social media and contact links -->
-                    <!-- Each link also has an aria-label attribute to describe the link to screen readers -->
-                    <a href="https://www.linkedin.com/in/andre%CC%81-henry/" aria-label="André Henry's LinkedIn profile"><i
-                            class="fab fa-linkedin"></i></a> <!-- LinkedIn link -->
-                    <a href="https://github.com/awh9" aria-label="André Henry's GitHub profile"><i
-                            class="fab fa-github"></i></a> <!-- Github link -->
-                    <a href="mailto:awh9@njit.edu" aria-label="Email André Henry"><i
-                            class="fab fas fa-envelope"></i></a> <!-- Email link -->
-            </div> <!-- Closes the links div -->
-            <section class="sidebar-bottom"> <!-- A section to hold the resume objective -->
-                <h4>Objective</h4> <!-- Title of the objective section -->
-                <p>To obtain a position involving information security</p> <!-- Objective text -->
-            </section> <!-- Closes the sidebar-bottom section -->
-            </div> <!-- Closes the sidebar-top div -->
-
-        </aside> <!-- Closes the aside tag -->
-
-        <main class="main-content" role="main"> <!-- The main content of the webpage, where the major content is placed -->
-
-            <header role="banner"> <!-- Header of the main content -->
-                <h1>Embarking on Every Code Adventure</h1> <!-- Title of the resume -->
-            </header>
-
-            <section class="skills-section"> <!-- A section to list all skills -->
-                <h2>Skills</h2> <!-- Title of the skills section -->
-                <ul class="skill-list"> <!-- Unordered list to contain all skills -->
-                    <li><i class="fab fa-python"></i> Python</li> <!-- Each skill is an li element with an icon and text -->
-                    <li><i class="fab fa-linux"></i> Linux System Administration</li>
-                    <li><i class="fab fa-next.js"></i> Next.js</li>
-                    <li><i class="fab fa-figma"></i> Figma</li>
-                    <li><i class="fab fa-java"></i> Java Sockets</li>
-                    <li><i class="fab fa-php"></i> PHP</li>
-                    <li><i class="fab fa-css3"></i> CSS</li>
-                    <li><i class="fab fa-html5"></i> HTML</li>
-                    <li><i class="fab fa-python"></i> Python</li>
-                    <li><i class="fab fa-js"></i> JavaScript</li>
-                    <li><i class="fab fa-cuttlefish"></i> C++</li>
-                    <li><i class="fas fa-database"></i> SQL</li>
-                    <li><i class="fab fa-C#"></i> C#</li>
-                </ul> <!-- Closes the skill list -->
-            </section> <!-- Closes the skills section -->
-
-            <section class="experience-section"> <!-- A section to list work experience -->
-                <h2>Experience</h2> <!-- Title of the experience section -->
-                <h3> Network Automation Engineer Intern, Verizon </h3>
-                <h4>June 2024-August 2024 |  Cary, North Carolina</h4>
-                <ul>
-                    <li>Worked on automation projects: Vendor Log Collector API & Workflow Intake System </li>
-                </ul>
-
-            </section> <!-- Closes the experience section -->
-
-            <section class="education-section"> <!-- A section to list educational background -->
-                <h2>Education</h2> <!-- Title of the education section -->
-                <h3>B.S. Information Technology | New Jersey Institute of Technology</h3> <!-- Degree and university -->
-                <h4>2021 - 2025</h4> <!-- Duration of the degree -->
-                <h5>NSF CyberCorps SFS Scholar [09/2024 - 05/2026]</h5>
-            </section> <!-- Closes the education section -->
-
-            <section class="project-section"> <!-- A section to list projects -->
-                <h2>Projects</h2> <!-- Title of the projects section -->
-
-                <h3>Vendor Log Collector API</h3>
-                <h4>06/2024-07/2024</h4>
-                <ul>
-                    <li>Used Python, FastAPI, and Postman to create an API that used LDAP and Bearer Token Authentication for enhanced security. The API automated specific tasks: retrieving case attachments & details, creating new cases, updating existing cases, and uploading log files to cases. 
-                        This API eventually simplified and sped up the case management process for the Network Transport Team.
-                    </li>
-                </ul>
-
-                <h3>Workflow Intake System</h3>
-                <h4>07/2024-08/2024</h4>
-                <ul>
-                    <li>
-                        Used Python, Flask, Javascript, Heidi SQL, CSS, and HTML to create an application where users could securely submit and track requests for automation. The teams could prioritize, and follow through on requests. 
-                    </li>
-                    <li>
-                        Front-end and back-end validation were used for the requestor form to ensure accurate and appropriate inputs into the database for storage. This data was then stored, retrieved, and altered so that the user could track and edit their requests. 
-                    </li>
-                    <li>
-                        The application used LDAP group permissions so users had access controls. Only admins could see all the requests submitted, to assign the request to a respective system. In contrast, a normal user could only see their request.
-                    </li>
-                </ul>
-                <h3>Next.js E-Commerce Website (Revolve)</h3> <!-- Title of the project -->
-                <h4>11/2023-12/2023</h4> <!-- Duration of the project -->
-                <ul> <!-- Unordered list to contain project details -->
-                    <li>Created an e-commerce website with my partner using next.js. Drafted the design using Figma. This website incorporated the Ruler archetype and the likeness method of persuasion, as seen in the hero section. The Sign Up page incorporated MailChimp api. Used Playwright testing for quality assurance.</li> <!-- Each project detail -->
-                    <a href="https://is-218-project.vercel.app/" aria-label="Revolve"><i>Revolve</i> </a>
-                </ul> <!-- Closes the project details list -->
-                <ul> <!-- Unordered list to contain project details -->
-                    <a href = "https://github.com/awh9/IS218-Project" aria-label="Revolve Code"><i>Github</i> </a>
-                </ul>
-                <ul> <!-- Unordered list to contain project details -->
-                    <a href =  " https://www.figma.com/file/ryD6uy2hRweqoGXyDmCaOo/Final-E-Commerce-Website-UI-UX-Design?type=design&node-id=1%3A3&mode=design&t=koMKmLDsX00bQnep-1" aria-label="Revolve Figma"><i>Figma</i> </a>
-                </ul> <!-- Closes the project details list -->
-                <h3>Unity XR Game</h3> <!-- Title of the project -->
-                <h4>01/2023-05/2023</h4> <!-- Duration of the project -->
-                <ul> <!-- Unordered list to contain project details -->
-                    <li>Developed a virtual reality game using Unity content creation system and C#.</li> <!-- Each project detail -->
-                    <a href="https://ahenry777.itch.io/it-201-sprint-4" aria-label="André Henry's Youtube"><i>Game Link</i> </a>
-                </ul> <!-- Closes the project details list -->
-
-                <h3>E-commerce Shop - Full Stack</h3> <!-- Title of the project -->
-                <h4>09/2022 - 12/2022</h4> <!-- Duration of the project -->
-                <ul> <!-- Unordered list to contain project details -->
-                    <li>Created a simple e-commerce site for users. Administrators or store owners could manage inventory and users could manage their carts and place orders</li> <!-- Each project detail -->
-                    <a href="https://www.youtube.com/watch?v=ymmurrzCrwk" aria-label="André Henry's Youtube"><i>Youtube</i> </a>
-                </ul> <!-- Closes the project details list -->
-                <ul>
-                    <a href="https://github.com/awh9/IT202/tree/prod" aria-label ="André Henry's Github"><i>Github</i> </a>
-                </ul>
-                
-
-                <h3>Chatroom - Java Sockets</h3> <!-- Title of the project -->
-                <h4>09/2022 - 12/2022</h4> <!-- Duration of the project -->
-                <ul> <!-- Unordered list to contain project details -->
-                    <li>Created a global chatroom where users could communicate in the chatroom using java sockets. New joiners could not see the previous chat history and users could break out into separate rooms.</li> <!-- Each project detail -->
-                    <a href="https://www.youtube.com/watch?v=3HqrtGiEWQM" aria-label="André Henry's Youtube"><i>Youtube</i> </a>
-                </ul> <!-- Closes the project details list -->
-                <ul>
-                    <a href="https://github.com/awh9/IT-114" aria-label ="André Henry's Github"><i>Github</i> </a>
-                </ul> <!-- Closes the project details list -->
-
+                <div class="education-item">
+                    <h3>B.S. Information Technology</h3>
+                    <p>New Jersey Institute of Technology </p>
+                    <p>2021 - 2025</p>
+                    <p>NSF CyberCorps SFS Scholar [09/2024 - 05/2026]</p>
+                </div>
             </section>
-            
-        </main> <!-- Closes the main content -->
-    </div> <!-- Closes the container -->
-</body> <!-- Closes the body -->
 
-</html> <!-- Closes the HTML -->
+            <!-- Experience Section -->
+            <section>
+                <h2 class="section-title">Experience</h2>
+                <div class="experience-item">
+                    <h3>Network Automation Engineer Intern</h3>
+                    <p>Verizon </p>
+                    <p>Cary, North Carolina | June 2024 - August 2024</p>
+                    <p>Worked on automation projects: Vendor Log Collector API & Workflow Intake System</p>
+                </div>
+            </section>
+
+
+            <!-- Skills Section -->
+            <section>
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-item">
+                    <ul>
+                        <li><i class="fas fa-code"></i>Python, JavaScript, Java, Linux, Bash, PHP</li>
+                        <li><i class="fas fa-lock"></i>Network Security, Penetration Testing</li>
+                        <li><i class="fas fa-laptop-code"></i>Web Development (HTML, CSS, Flask, FastAPI, Next.js)</li>
+                        <li><i class="fas fa-database"></i>SQL, HeidiSQL</li>
+                        <li><i class="fas fa-network-wired"></i>Docker</li>
+                    </ul>
+                </div>
+            </section>
+
+            
+            <!-- Projects Section -->
+            <section>
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-item">
+                    <h3>Vendor Log Collector API</h3>
+                    <p>Used Python, FastAPI, and Postman to create an API that used LDAP and Bearer Token Authentication for enhanced security. The API automated specific tasks: retrieving case attachments & details, creating new cases, updating existing cases, and uploading log files to cases.
+                        This API eventually simplified and sped up the case management process for the Network Transport Team.
+</p>
+                </div>
+                <div class="projects-item">
+                    <h3>Workflow Intake System</h3>
+                    <p>Used Python, Flask, Javascript, Heidi SQL, CSS, and HTML to create an application where users could securely submit and track requests for automation. The teams could prioritize, and follow through on requests.
+                    </p>
+                    <p>Front-end and back-end validation were used for the requestor form to ensure accurate and appropriate inputs into the database for storage. This data was then stored, retrieved, and altered so that the user could track and edit their requests.
+                        The application used LDAP group permissions so users had access controls. Only admins could see all the requests submitted, to assign the request to a respective system. In contrast, a normal user could only see their request.
+</p>
+                </div>
+                <div class="projects-item">
+                    <h3>Next.js E-Commerce Website (Revolve)</h3>
+                    <p>Created an e-commerce website with my partner using next.js. Drafted the design using Figma. This website incorporated the Ruler archetype and the likeness method of persuasion, as seen in the hero section. The Sign Up page incorporated MailChimp api. Used Playwright testing for quality assurance.</p>
+                    <a href="https://is-218-project.vercel.app/" aria-label="Revolve"><i>Revolve</i> </a>
+                    <a href = "https://github.com/awh9/IS218-Project" aria-label="Revolve Code"><i>Github</i> </a>
+                    <a href =  " https://www.figma.com/file/ryD6uy2hRweqoGXyDmCaOo/Final-E-Commerce-Website-UI-UX-Design?type=design&node-id=1%3A3&mode=design&t=koMKmLDsX00bQnep-1" aria-label="Revolve Figma"><i>Figma</i> </a>
+
+                </div>
+
+                <div class="projects-item">
+                    <h3>Unity XR Game</h3>
+                    <p>Developed a virtual reality game using Unity content creation system and C#.</p> <!-- Each project detail -->
+                    <a href="https://ahenry777.itch.io/it-201-sprint-4" aria-label="André Henry's Youtube"><i>Game Link</i> </a>
+                </div>
+
+                <div class="projects-item">
+                    <h3>E-commerce Shop - Full Stack</h3>
+                    <p>Created a simple e-commerce site for users. Administrators or store owners could manage inventory and users could manage their carts and place orders</p>
+                    <a href="https://www.youtube.com/watch?v=ymmurrzCrwk" aria-label="André Henry's Youtube"><i>Youtube</i> </a>
+                    <a href="https://github.com/awh9/IT202/tree/prod" aria-label ="André Henry's Github"><i>Github</i> </a>
+                </div>
+
+                <div class="projects-item">
+                    <h3>Chatroom - Java Sockets</h3>
+                    <p>Created a global chatroom where users could communicate in the chatroom using java sockets. New joiners could not see the previous chat history and users could break out into separate rooms.</p>
+                    <a href="https://www.youtube.com/watch?v=3HqrtGiEWQM" aria-label="André Henry's Youtube"><i>Youtube</i> </a>
+                    <a href="https://github.com/awh9/IT-114" aria-label ="André Henry's Github"><i>Github</i> </a>
+            </section>
+
+
+
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>© 2024 André Henry. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
