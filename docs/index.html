@@ -4,405 +4,59 @@
     <meta charset="UTF-8">
     <meta name="description" content="Portfolio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="content, resume, jobs, career, cyber security, web applications, network, network security">
-    <title>Personal Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="keywords" content="portfolio, resume, career">
+    <title>André Henry | Portfolio</title>
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-    <style>
-        /* Your custom CSS styles here */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #333;
-            color: #fff;
-        }
-
-        /* Navbar styles */
-        .navbar {
-            background-color: #333;
-            color: #fff;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        .navbar a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-        }
-
-        .navbar ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .navbar li {
-            display: flex;
-        }
-
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        /* Hero2 styles */
-        .hero2 {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            padding: 20px;
-            color: #fff;
-            background-color: #1e1e1e;
-            margin: 80px auto 0;
-            max-width: 1000px;
-        }
-
-        .hero2-content {
-            flex-basis: 40%;
-            text-align: left;
-        }
-
-        .hero2-image {
-            flex-basis: 60%;
-        }
-
-        .hero2-image img {
-            width: 100%;
-            height: auto;
-            max-height: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Projects section styles */
-        .projects-section {
-            background-color: #2c2c2c;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            margin-top: 20px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .projects-container {
-            display: flex;
-            overflow-x: auto; /* Enable horizontal scrolling */
-            scroll-snap-type: x mandatory; /* Snap to the start of each card */
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-        }
-
-        .project-card {
-            min-width: 300px; /* Minimum width of each card */
-            flex: 0 0 auto; /* Prevent flex items from growing */
-            margin: 10px;
-            padding: 20px;
-            background-color: #333;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            scroll-snap-align: start; /* Snap alignment for each card */
-        }
-
-        .project-card h3 {
-            font-size: 1.5rem;
-            color: #a9a9a9;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-card p {
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        /* Professional Links Section */
-        .professional-section {
-            text-align: center;
-            padding: 20px;
-            background-color: #2c2c2c;
-            color: #fff;
-            max-width: 1200px;
-            margin: 20px auto;
-        }
-
-        .professional-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            padding: 1rem;
-        }
-
-        .professional-links a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
-        }
-
-        .professional-links a:hover {
-            color: #88b7d8;
-        }
-
-        .professional-links i {
-            margin-right: 0.5rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        /* Responsive Adjustments for Smaller Screens (Tablets) */
-    @media (max-width: 768px) {
-        body {
-            padding-left: 15px; /* Add padding to the sides */
-            padding-right: 15px;
-        }
-
-        .navbar ul {
-            display: block;
-            text-align: center;
-        }
-
-        .hero2 {
-            flex-direction: column;
-            padding: 10px;
-        }
-
-        .hero2-content, .hero2-image {
-            flex-basis: 100%;
-            text-align: center;
-            margin:auto;
-        }
-
-        .hero2-content h1 {
-            font-size: 1.8rem;
-        }
-
-        .projects-section {
-            padding: 10px;
-        }
-
-        .project-card {
-            min-width: 280px;
-        }
-
-        .professional-section {
-            padding: 15px;
-        }
-
-        .professional-links {
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-        }
-    }
-
-    /* Responsive Adjustments for Very Small Screens (Mobile Phones) */
-    @media (max-width: 480px) {
-        body {
-            padding-left: 20px; /* Add smaller padding for mobile */
-            padding-right: 20px;
-        }
-
-        .navbar a {
-            padding: 10px;
-            font-size: 0.9rem;
-        }
-
-        .hero2-content h1 {
-            font-size: 1.5rem;
-        }
-
-        .hero2-content p {
-            font-size: 0.9rem;
-        }
-
-        .hero2-image img {
-            width: 90%;
-            margin:auto;
-            position: relative;
-        }
-
-        .project-card {
-            min-width: 250px;
-            margin: 5px;
-        }
-
-        .project-card h3 {
-            font-size: 1.2rem;
-        }
-
-        .project-card p {
-            font-size: 0.9rem;
-        }
-
-        .professional-links a {
-            font-size: 1rem;
-        }
-
-        .section-title {
-            font-size: 1.6rem;
-        }
-    }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   
+    
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="container">
-        <a href="#home" class="navbar-brand">André Henry</a>
-        <ul class="navbar-nav">
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="resume.html">Resume</a></li>
-        </ul>
-    </div>
-</nav>
-<!-- Hero2 Section 
-<section class="hero2">
-    <div class="hero2-content">
-        <h1>Welcome to my Personal Portfolio!</h1>
-        <p class="tagline">Hi there! I am Andre, a Senior who's an SFS Cybercorps Scholar in the BS/MS Program at NJIT. Majoring in Information Technology [Network and Information Security Specialization] and Mastering in Cybersecurity & Privacy. My unique ability to bridge the gap between Cybersecurity and Web Development allows me to create innovative solutions. Welcome to my personal portfolio!</p>
-        <a href="resume.html">
-            <button class="hero2-btn">Learn More</button>
-        </a>
-    </div>
-    <div class="hero2-image">
-        <img src="images/beachpic.webp" alt="Innovative Design">
-    </div>
-</section>
 
--->
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#home" class="navbar-brand">André Henry</a>
+            <ul class="navbar-nav">
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="content.html">Behind the Lens</a></li>
+                <li><a href="resume.html">Resume</a></li>
+               
+            </ul>
+        </div>
+    </nav>
+   
+    <!-- Home Section -->
+    <section id="home">
+        <div class="home-image">
+            <img src="21-_MG_0433.jpg" alt="André Henry">
+        </div>
+        <div class="home-text">
+            <h2 class="section-title"><span class="typing-animation">Welcome!</span></h2>
+            <p>
+                Hi, I'm André, a Graduate student and SFS Cybercorps Scholar at NJIT. I'm pursuing a MS degree in IT Administration and Security. My expertise bridges cybersecurity and web development, creating innovative solutions. Welcome to my portfolio!
+            </p>
+            <p>
+                My hobbies involve videography and photography, playing videogames.
+            </p>
+            <p class="website-note">(Website under construction ^...^)</p>
+            <a href="https://www.linkedin.com/in/andre%CC%81-henry/" class="button" target="_blank">
+                <i class="fab fa-linkedin"></i> Visit my LinkedIn
+            </a>
+            <a href="https://github.com/awh9" class="button" target="_blank">
+                <i class="fab fa-github"></i> Visit my GitHub
+            </a>    
+        </div>
+    </section>
 
-<section id="home" class="hero-section">
-    <div class="hero">
-        <div class="hero-content">
-            <h1>André Henry</h1>
-            <p class="title"> SFS Cybercorps Scholar | Cybersecurity | Network Automation </p>
-            <img src="images/redchairpic.webp" alt="André Henry" class="hero-image">
-            <h2>Welcome to my Personal Portfolio! </h2>
-            <p class="tagline">Hi, I'm André, a senior and SFS Cybercorps Scholar at NJIT. I'm pursuing a BS/MS in IT with a focus on Network Security and IT Administration. My expertise bridges cybersecurity and web development, creating innovative solutions. Welcome to my portfolio!</p>
-        </div>
-    </div>
-</section>
 
-<div id="projects" class="projects-section">
-    <h2 class="section-title">Projects</h2>
-    <div class="projects-container">
-        <div class="project-card">
-            <h3>JobQuest – Job Application Management Platform</h3>
-            <p>Developed a job application management platform using Flask, PHP, RabbitMQ, and MySQL to streamline job search and tracking. Built the Flask front-end for user registration, job tracking, and networking features, while the PHP back-end processed job listings, user data, and core application logic. Integrated RabbitMQ for asynchronous communication between services, ensuring real-time updates and fault-tolerant operations. Designed a secure MySQL database to store user profiles, applications, and networking data, improving user experience and data reliability.</p>
-        </div>
-        <div class="project-card">
-            <h3>PenTest Report</h3>
-            <p>Conducted penetration testing in a virtual lab using Kali Linux as the attacker system and Windows XP as the target. Tools like Metasploit, Nmap, and John the Ripper were used to identify vulnerabilities, including outdated software, weak password storage, and exposed services. Exploits demonstrated issues such as remote code execution via Internet Explorer (MS10-002 Aurora), cracking LM/NTLM password hashes, and detecting outdated services like Apache and FTP. Recommendations included patching software, enforcing strong password policies, and disabling unnecessary services to improve system security.</p>
-        </div>
-        <div class="project-card">
-            <h3>Vendor Log Collector API</h3>
-            <p>Used Python, FastAPI, and Postman to create an API that used LDAP and Bearer Token Authentication for enhanced security. The API automated specific tasks: retrieving case attachments & details, creating new cases, updating existing cases, and uploading log files to cases.</p>
-        </div>
-        <div class="project-card">
-            <h3>Workflow Intake System</h3>
-            <p>Used Python, Flask, JavaScript, Heidi SQL, CSS, and HTML to create an application where users could securely submit and track requests for automation. The teams could prioritize, and follow through on requests.</p>
-        </div>
-        <div class="project-card">
-            <h3>Next.js E-Commerce Website (Revolve)</h3>
-            <p>Created an e-commerce website with my partner using Next.js. Drafted the design using Figma. This website incorporated the Ruler archetype and used MailChimp API. Used Playwright testing for quality assurance.</p>
-        </div>
-        <div class="project-card">
-            <h3>Cybersecurity Security Labs Using Docker</h3>
-            <p>Used Docker containers to conduct labs: MitM attacks with Scapy, Exploiting log4j, Malicious Containers, and Scanning with nmap. Used AnyRun to conduct interactive malware analysis.</p>
-        </div>
-        <div class="project-card">
-            <h3>Full-stack Ecommerce Website</h3>
-            <p>Created a simple e-commerce site for users. Administrators or store owners could manage inventory and users could manage their carts and place orders.</p>
-        </div>
-        <div class="project-card">
-            <h3>Chatroom - Java Sockets</h3>
-            <p>Created a global chatroom where users could communicate in the chatroom using Java sockets. New joiners could not see the previous chat history and users could break out into separate rooms.</p>
-        </div>
-        <div class="project-card">
-            <h3>Unity XR Game</h3>
-            <p>Created using C# programming in the Unity content creation engine.</p>
-        </div>
-    </div>
-</div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 André Henry. All rights reserved.</p>
+    </footer>
 
-<section id="professional" class="professional-section">
-    <h2>Professional Links</h2>
-    <div class="professional-links">
-        <a href="https://www.linkedin.com/in/andre%CC%81-henry/" target="_blank" title="LinkedIn">
-            <i class="fab fa-linkedin"></i>Visit my LinkedIn page!
-        </a>
-        <a href="https://github.com/awh9" target="_blank" title="GitHub">
-            <i class="fab fa-github"></i>Visit my repositories on GitHub!
-        </a>
-    </div>
-</section>
 
-<footer>
-    <div class="footer">
-        <p>&copy; Henry 2024</p>
-    </div>
-</footer>
-
-<script>
-    // JavaScript for project navigation
-    document.addEventListener('DOMContentLoaded', function() {
-        const projectsContainer = document.querySelector('.projects-container');
-        const projectCards = document.querySelectorAll('.project-card');
-        const nextButton = document.createElement('button');
-        nextButton.textContent = 'Next';
-        nextButton.textContent = 'Next';
-        nextButton.classList.add('next-button');
-        projectsContainer.appendChild(nextButton);
-
-        let currentIndex = 0;
-        const maxIndex = projectCards.length - 1;
-
-        // Function to show current project card
-        const showProject = (index) => {
-            projectCards.forEach((card, i) => {
-                if (i === index) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        };
-
-        // Show the first project card initially
-        showProject(currentIndex);
-
-        // Event listener for next button
-        nextButton.addEventListener('click', function() {
-            currentIndex = (currentIndex + 1) % projectCards.length;
-            showProject(currentIndex);
-        });
-    });
-</script>
+</body>
+</html>

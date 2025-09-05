@@ -1,0 +1,220 @@
+:root {
+    /* Navy + Teal Theme */
+    --navy: #0a192f;        /* Deep navy */
+    --slate: #1e3a5f;       /* Medium slate */
+    --light-slate: #2d4a76; /* Lighter slate */
+    --accent: #64ffda;      /* Teal accent */
+    --text: #ccd6f6;        /* Light text */
+    --text-light: #8892b0;  /* Secondary text */
+    
+    --sidebar-w: 280px;
+  
+    --space-1: .5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+  
+    --radius: 12px;
+    --shadow: 0 6px 18px rgba(0,0,0,.35);
+  
+    --font: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  }
+  
+  /* Global */
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font);
+    background: var(--navy);
+    color: var(--text);
+  }
+  
+  /* Sidebar (fixed on desktop) */
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: var(--sidebar-w);
+    height: 100vh;
+    background: var(--slate);
+    color: var(--text);
+    padding: var(--space-3);
+    overflow-y: auto;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    box-shadow: inset 0 -1px 0 rgba(255,255,255,.06);
+    border-right: 1px solid rgba(100, 255, 218, 0.1);
+  }
+  
+  .sidebar img {
+    width: 85%;
+    height: auto;
+    border-radius: 10%;
+    border: 2px solid var(--accent);
+    box-shadow: 0 10px 22px rgba(0,0,0,.45);
+  }
+  
+  .sidebar a {
+    color: var(--text);
+    text-decoration: none;
+    margin: .35rem 0;
+    font-size: 1.05rem;
+    transition: all .2s ease;
+  }
+  
+  .sidebar a:hover { 
+    color: var(--accent); 
+  }
+  
+  .sidebar h2 {
+    color: var(--accent);
+    margin: .25rem 0 .5rem 0;
+  }
+  
+  /* Main content */
+  .main-content {
+    margin-left: calc(var(--sidebar-w) + var(--space-3));
+    padding: var(--space-3);
+    min-height: 100vh;
+    background: var(--navy);
+  }
+  
+  .resume-section {
+    margin: var(--space-3) auto;
+    padding: var(--space-3);
+    background: var(--light-slate);
+    color: var(--text);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    max-width: 1000px;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+  }
+  
+  .resume-header {
+    text-align: center;
+    margin-bottom: var(--space-3);
+  }
+  .resume-header h1 {
+    margin: 0 0 .35rem 0;
+    font-size: 2.2rem;
+    color: var(--accent);
+  }
+  .resume-header p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text-light);
+  }
+  
+  /* Sections */
+  .section-title {
+    font-size: 1.65rem;
+    margin-bottom: .75rem;
+    padding-bottom: .35rem;
+    border-bottom: 2px solid var(--accent);
+    color: var(--text);
+  }
+  
+  /* Resume Cards */
+  .education-item,
+  .experience-item,
+  .projects-item,
+  .skills-item {
+    background: var(--slate);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    box-shadow: 0 6px 16px rgba(0,0,0,.25);
+    margin-bottom: 1rem;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+  }
+  
+  /* Logos */
+  .school-logo,
+  .company-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-right: .75rem;
+    float: left;
+    border-radius: 6px;
+    background: #fff;
+  }
+  .experience-item::after,
+  .education-item::after { content: ""; display: table; clear: both; }
+  
+  /* Text inside cards */
+  .experience-item h3,
+  .education-item h3,
+  .projects-item h3 {
+    margin: 0 0 .35rem 0;
+    color: var(--accent);
+    font-size: 1.25rem;
+  }
+  .experience-item p,
+  .education-item p,
+  .projects-item p {
+    margin: .25rem 0;
+    color: var(--text-light);
+  }
+  
+  /* Skills */
+  .skills-item ul {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: .5rem .75rem;
+  }
+  .skills-item li {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+  .skills-item li i { color: var(--accent); }
+  
+  /* Footer */
+  footer {
+    background: var(--slate);
+    color: var(--text-light);
+    text-align: center;
+    padding: var(--space-2) 0;
+    border-top: 1px solid rgba(100, 255, 218, 0.1);
+  }
+  
+  /* Links general */
+  a { color: var(--accent); }
+  a:hover { color: #52e0c4; }
+  
+  /* Responsive */
+  @media (max-width: 980px) {
+    .sidebar {
+      position: relative;
+      width: auto; height: auto;
+      border-radius: 0 0 14px 14px;
+      margin: 0 var(--space-3);
+    }
+    .main-content { margin-left: 0; }
+  }
+  @media (max-width: 560px) {
+    .school-logo, .company-logo {
+      float: none;
+      display: block;
+      margin: 0 auto .5rem auto;
+    }
+    .resume-header h1 { font-size: 1.8rem; }
+    .section-title { font-size: 1.35rem; }
+  }
+  
+  /* Print */
+  @media print {
+    body { background: #fff; color: #000; }
+    .sidebar {
+      position: static; width: auto; height: auto;
+      box-shadow: none; background: #fff; color: #000; border: none;
+    }
+    .sidebar a { color: #000 !important; }
+    .main-content { margin-left: 0; padding: 0; }
+    .resume-section { box-shadow: none; }
+  }
+  
