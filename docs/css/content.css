@@ -23,10 +23,62 @@
     color: var(--text);
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
   }
   
+  /* Navbar */
+  .navbar {
+    background-color: var(--content-bg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    width: 100%;
+  }
+  
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .navbar-brand {
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  
+  .navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .navbar-nav a {
+    text-decoration: none;
+    color: var(--primary-light);
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-nav a:hover {
+    color: var(--accent);
+  }
+  
+  footer {
+    width: 100%;
+    padding: 1.5rem 0;
+    text-align: center;
+    background-color: var(--primary);
+    color: var(--content-bg);
+    margin-top: auto;
+  }
+  
+  /* Content Container */
   .centered-container {
     width: 100%;
     max-width: 1400px;
@@ -64,6 +116,7 @@
     width: 100px;
   }
   
+  /* Carousel */
   .carousel-container {
     width: 100%;
     max-width: 1100px;
@@ -93,7 +146,7 @@
     flex-shrink: 0;
     scroll-snap-align: center;
     border-radius: 12px;
-    transition: box-shadow 0.4s ease-in-out; 
+    transition: box-shadow 0.4s ease-in-out;
   }
   
   .carousel-slide img:hover {
@@ -128,6 +181,7 @@
     border-radius: 50%;
   }
   
+  /* Gallery */
   .gallery-container {
     width: 100%;
     max-width: 1400px;
@@ -191,4 +245,46 @@
     font-weight: 600;
     text-align: center;
     padding: 10px;
+  }
+  
+  /* ============================ */
+  /* MOBILE RESPONSIVENESS    */
+  /* ============================ */
+  @media (max-width: 768px) {
+    .navbar .container {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+      padding: 0 1rem;
+    }
+  
+    .navbar-nav {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    /* Carousel text sidebar styling for mobile */
+    .carousel-item-with-text {
+      flex-direction: column; /* Stack image and text vertically */
+      align-items: center;
+      justify-content: center;
+      gap: 10px; /* Reduced gap */
+      width: 100%;
+    }
+  
+    .carousel-item-with-text img {
+      height: 300px; /* Reduced height for mobile */
+      width: 100%; /* Image takes full width */
+    }
+  
+    .carousel-text-sidebar {
+      width: 100%; /* Text takes full width */
+      text-align: center;
+    }
+  
+    /* Gallery styling for mobile */
+    .gallery-container {
+      gap: 15px; /* Reduced gap for a tighter layout */
+      padding: 10px;
+    }
   }
