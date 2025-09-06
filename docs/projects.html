@@ -12,12 +12,18 @@
 <body>
     <nav class="navbar">
         <div class="container">
-            <a href="index.html">Home</a>
-            <a href="#projects">Projects</a>
-            <a href="content.html">Behind the Lens</a>
-            <a href="resume.html" >Resume</a>
+            <a href="index.html" class="navbar-brand">André Henry</a>
+            <ul class="navbar-nav">
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="content.html">Behind the Lens</a></li>
+                <li><a href="resume.html">Resume</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                <span class="hamburger"></span>
+            </button>
         </div>
     </nav>
+    
 
     <section id="projects">
         <h2 class="section-title">Projects</h2>
@@ -99,4 +105,15 @@
         </div>
     </section>
 </body>
+    <script> 
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navbarNav = document.querySelector('.navbar-nav');
+            
+            menuToggle.addEventListener('click', () => {
+                navbarNav.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+        });
+    </script>
 </html>
